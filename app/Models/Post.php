@@ -12,14 +12,15 @@ class Post extends Model
 
     protected $fillable = [
         'image',
-        'title',
-        'content',
+        'name',
+        'nim',
+        'prodi',
     ];
 
     public function image(): Attribute
     {
         return Attribute::make(
-            get: fn ($image) => url('/storage/public/post/' . $image),
+            get: fn ($image) => url('/storage/public/posts/' . $image),
         );
     }
 }
